@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BrightPath Solutions helps businesses grow with strategy, branding, and digital execution.">
+  <title>BrightPath Solutions | Professional Growth Marketing</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --primary: #155eef;
+      --primary-dark: #0e3ea8;
+      --text: #0f172a;
+      --muted: #475467;
+      --border: #e4e7ec;
+      --success: #039855;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(130deg, #071139, #0e1f5e 55%, #155eef);
+      color: #fff;
+      padding-bottom: 3.5rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 0;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.3rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: #e6edff;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+
+    .nav-links a:hover { opacity: .8; }
+
+    .hero {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      padding: 2rem 0 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .hero p {
+      color: #dbe4ff;
+      max-width: 58ch;
+      margin-top: 1rem;
+    }
+
+    .actions {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 0.75rem 1.1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: #0e1f5e;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.4);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      backdrop-filter: blur(4px);
+      padding: 1.4rem;
+      border-radius: 14px;
+    }
+
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,.2);
+      padding: 0.7rem 0;
+      font-size: 0.95rem;
+    }
+
+    .metric strong { font-size: 1.05rem; }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      margin: 0 0 0.4rem;
+      font-size: 1.75rem;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 68ch;
+    }
+
+    .grid {
+      margin-top: 1.8rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+    }
+
+    .card h3 {
+      margin: 0.2rem 0 0.4rem;
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .pill {
+      color: var(--success);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .testimonial {
+      background: #101828;
+      color: #fff;
+      border-radius: 14px;
+      padding: 1.3rem;
+    }
+
+    .testimonial p {
+      margin: 0;
+      color: #d0d5dd;
+      font-size: 0.95rem;
+    }
+
+    .author {
+      margin-top: 0.9rem;
+      font-weight: 600;
+      color: #fcfcfd;
+      font-size: 0.9rem;
+    }
+
+    .cta {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #fff;
+      color: #667085;
+      font-size: 0.9rem;
+      padding: 1.2rem 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .cta { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      section { padding: 3.1rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">BrightPath Solutions</div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#results">Results</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <div>
+          <h1>Professional marketing that turns business goals into measurable growth.</h1>
+          <p>
+            We help ambitious brands sharpen their message, improve customer acquisition, and scale with confidence through strategy, creative, and performance marketing.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Book a Strategy Call</a>
+            <a class="btn btn-secondary" href="#services">Explore Services</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Results overview">
+          <div class="metric"><span>Average Lead Growth</span><strong>+148%</strong></div>
+          <div class="metric"><span>Campaign ROAS</span><strong>4.7x</strong></div>
+          <div class="metric"><span>Client Retention</span><strong>94%</strong></div>
+          <div class="metric" style="border-bottom: 0;"><span>Active Industries</span><strong>12</strong></div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Built for teams that expect clear outcomes</h2>
+        <p class="section-subtitle">From positioning to performance, our integrated services align your brand, message, and channels so every campaign supports measurable business growth.</p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="pill">Strategy</div>
+            <h3>Brand & Market Positioning</h3>
+            <p>Define your competitive edge with clear messaging, audience insights, and a practical roadmap for sustainable growth.</p>
+          </article>
+          <article class="card">
+            <div class="pill">Creative</div>
+            <h3>Website & Campaign Design</h3>
+            <p>Create modern, conversion-focused digital experiences that communicate value quickly and professionally.</p>
+          </article>
+          <article class="card">
+            <div class="pill">Performance</div>
+            <h3>Paid Media Optimization</h3>
+            <p>Scale revenue efficiently through data-led campaign management across search, social, and remarketing channels.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <h2 class="section-title">A process focused on accountability</h2>
+        <p class="section-subtitle">We operate as a strategic extension of your team with transparent reporting, clear priorities, and ongoing optimization every month.</p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>1. Discover</h3>
+            <p>Audit your current marketing foundation, customer journey, and channel performance to identify high-impact opportunities.</p>
+          </article>
+          <article class="card">
+            <h3>2. Execute</h3>
+            <p>Launch focused campaigns with coordinated messaging, creative assets, and channel strategies tailored to your goals.</p>
+          </article>
+          <article class="card">
+            <h3>3. Improve</h3>
+            <p>Monitor outcomes, test systematically, and refine performance to maximize return while reducing wasted spend.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="container">
+        <h2 class="section-title">Trusted by growth-minded organizations</h2>
+        <div class="grid">
+          <article class="testimonial">
+            <p>“BrightPath helped us reposition our offer and rebuild our website. Within one quarter, qualified inbound leads more than doubled.”</p>
+            <div class="author">— Maya Lin, VP Marketing</div>
+          </article>
+          <article class="testimonial">
+            <p>“Their team brought strategy and execution together. We finally had a system for scaling paid campaigns without sacrificing efficiency.”</p>
+            <div class="author">— Daniel Cho, CEO</div>
+          </article>
+          <article class="testimonial">
+            <p>“Professional, responsive, and focused on results. Their reporting made decision-making faster for our entire leadership team.”</p>
+            <div class="author">— Elena Brooks, Operations Director</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 class="section-title" style="margin-bottom: 0.35rem;">Ready to elevate your marketing?</h2>
+            <p class="section-subtitle" style="margin-top: 0;">Partner with a team that combines strategic thinking with practical execution.</p>
+          </div>
+          <a class="btn btn-primary" href="mailto:hello@brightpath.example">Contact Our Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 BrightPath Solutions. All rights reserved.</div>
+  </footer>
+</body>
+</html>
